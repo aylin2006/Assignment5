@@ -11,8 +11,10 @@ document.getElementById("submit").addEventListener("click", function() {
     if (el.checked) price += parseInt(el.value);
   });
 
-  const age = document.querySelector("input[name='age']:checked").value;
-  price *= parseFloat(age);
+  const ageRadio = document.querySelector("input[name='age']:checked");
+  if (ageRadio) {
+    price *= parseFloat(ageRadio.value);
+  }
 
   const reps = document.querySelectorAll(".rep");
   reps.forEach(rep => {
